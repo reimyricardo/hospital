@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Clinic.Data\Clinic.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.9.0" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DoctorsPatient\Query\" />
+    <Folder Include="Patients\Commands\CreatePatient\" />
+    <Folder Include="Patients\Commands\DeletePatient\" />
+    <Folder Include="Patients\Commands\UpdatePatient\" />
+    <Folder Include="Patients\Query\GetPatientsInformation\" />
+    <Folder Include="Patients\Query\GetAllDoctorsFromPatient\" />
+  </ItemGroup>
+
+</Project>

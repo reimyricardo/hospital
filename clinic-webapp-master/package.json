@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "clinic-webapp": "file:Clinic.WebApp"
+  }
+}
