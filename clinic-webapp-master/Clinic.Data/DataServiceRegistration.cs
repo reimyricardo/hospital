@@ -35,7 +35,7 @@ public static class DataServiceRegistration
         {
             DatabaseOptions databaseOptions = serviceProvider.GetRequiredService<IOptions<DatabaseOptions>>().Value;
 
-            options.UseSqlServer(databaseOptions.ConnectionString, sqlServerOptionsAction =>
+            options.UseMySql(databaseOptions.ConnectionString, ServerVersion.AutoDetect(databaseOptions.ConnectionString), sqlServerOptionsAction =>
             {
                 sqlServerOptionsAction.CommandTimeout(databaseOptions.CommandTimeout);
 

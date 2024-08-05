@@ -28,29 +28,29 @@ var builder = WebApplication.CreateBuilder(args);
         options.SubstituteApiVersionInUrl = true;
     });
     builder.Services.AddSwaggerGen();
-    builder.Configuration.AddUserSecrets<Program>(optional:false,reloadOnChange:true);
+    //builder.Configuration.AddUserSecrets<Program>(optional:false,reloadOnChange:true);
 }
 
 
 
 var app = builder.Build();
 
-{ 
+{
     // Configure the HTTP request pipeline.
-    if (app.Environment.IsDevelopment())
-    {
-        app.UseSwagger();
+    //if (app.Environment.IsDevelopment())
+    //{
+    app.UseSwagger();
 
-        app.UseSwaggerUI();
+    app.UseSwaggerUI();
 
-        await app.Services.InitializeDatabaseAsync();
-    }
+    //    await app.Services.InitializeDatabaseAsync();
+    //}
 
     app.UseHttpsRedirection();
 
     app.UseExceptionHandler();
 
-    app.UseCors(options => 
+    app.UseCors(options =>
     {
         options.AllowAnyHeader();
         options.AllowAnyMethod();
